@@ -1,0 +1,16 @@
+
+  "name": "postman-jenkins",
+  "version": "1.0.0",
+  "description": "Project for storing postman tests",
+  "directories":{
+	  "test":"tests"
+  },
+
+  "scripts": {
+    "api-test-test": "newman run AddClient e2e.postman_collection.json"
+  },
+  "author": "Victor I p.",
+  "dependencies": {
+    "newman": "^4.5.1"
+  }
+}
