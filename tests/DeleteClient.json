@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "6774d22b-0803-4fe7-a2f8-42b75daf407a",
+		"name": "DeleteClient",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "deleteClient",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ca27d911-3e20-4405-a73e-7d46c3bd7659",
+						"exec": [
+							"//Victor I.P. purge client by client id.",
+							"var getId = pm.variables.get(\"clientId\");",
+							"",
+							"if (pm.response.code === 200) {",
+							"    pm.test(\"Status code is 200 for Purged client, id:\" + getId, function () {",
+							"    pm.response.to.have.status(200);",
+							"    pm.expect(pm.response.text()).to.include(\"Purged client: \");",
+							"    console.log(\"Purged client\" + \" client id: \" + getId);",
+							"    });",
+							"} else if (pm.response.code === 404) {",
+							"    pm.sendRequest(\"https://dda-client-e2e.apps.fog.onefiserv.net/v1/clients/\" + getId, function (err, response) {",
+							"         pm.test(\"Status code is 404 for Client not found\" + \" Client id: \" + getId, function() {",
+							"        pm.expect(pm.response.text()).to.include( \"Client not found\");",
+							"        console.log(\"Status code is 404 for Client not found\" + \" client id: \" + getId);",
+							"pm.variables.get(\"variable_key\");",
+							"      });",
+							"});",
+							"pm.environment.set(\"variable_key\", \"variable_value\");",
+							"}",
+							" pm.environment.clear();"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "https://dda-client-e2e.apps.fog.onefiserv.net/v1/clients/92167",
+					"protocol": "https",
+					"host": [
+						"dda-client-e2e",
+						"apps",
+						"fog",
+						"onefiserv",
+						"net"
+					],
+					"path": [
+						"v1",
+						"clients",
+						"92167"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
