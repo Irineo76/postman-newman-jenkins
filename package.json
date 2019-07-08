@@ -7,7 +7,7 @@
   },
 
   "scripts": {
-    "api-test-test": "newman run AddClient e2e.postman_collection.json"
+    "api-test-test": "newman run tests/AddClient e2e.postman_collection.json"
   },
   "author": "Victor I p.",
   "dependencies": {
