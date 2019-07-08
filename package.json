@@ -7,7 +7,7 @@
   },
 
   "scripts": {
-    "api-test-test": "newman run tests/AddClient.e2e.json"
+    "api-test-test": "newman run tests/AddClient.e2e.json --insecure"
   },
   "author": "Victor I p.",
   "dependencies": {
