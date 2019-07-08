@@ -459,7 +459,7 @@
 					"formdata": []
 				},
 				"url": {
-					"raw": "https://dda-client-e2e.apps.fog.onefiserv.net/v1/clients/{{clientId}}",
+					"raw": "https://dda-client-e2e.apps.fog.onefiserv.net/v1/clients/92167",
 					"protocol": "https",
 					"host": [
 						"dda-client-e2e",
@@ -471,7 +471,7 @@
 					"path": [
 						"v1",
 						"clients",
-						"{{clientId}}"
+						"92167"
 					]
 				}
 			},
