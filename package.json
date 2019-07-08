@@ -7,7 +7,7 @@
   },
 
   "scripts": {
-    "api-test-test": "newman run tests/AddClient.e2e.json --insecure"
+    "api-test-test": "newman run tests/AddClient.e2e.json --reporters junit --reporter-junit-export=report.xml"
   },
   "author": "Victor I p.",
   "dependencies": {
